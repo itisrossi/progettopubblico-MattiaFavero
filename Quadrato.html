@@ -5,27 +5,43 @@
 
 <body>
     <script>
-        
-        let n = 5
+        //creazione del vettore
+
+        let n = 3;
         let c = 2*n-1
 
-        let quadrato = new Array(c);
-        for(let i = 0; i < c; i++)
-        {
-            quadrato[i] =  new Array(c);
+        let matrix = new Array(c);
+        for(let i = 0; i < c; i++) {
+            matrix[i] =  new Array(c);
         }
         
-        for(let i = 0; i < c; i++)
-        {
-            for(let j = 0; j < c; j++)
-            {
-                quadrato[i][j] = n;
+        //riempimento delle righe
+        function riga(xi, xf, y, e){
+            while(xi <= xf){
+                matrix[y][xi] = e;
+                xi = xi+1;
             }
         }
 
-        console.log(quadrato);
+        //riempimento delle colonne
+        function col(yi, yf, x, e){
+            while(yi <= yf){
+                matrix[yi][x] = e;
+                yi = yi+1;
+            }
+        }
         
+        //creazione dei quadrati
+        function quadrato()
+
+
+        riga(0, n+1, 0, n) //riga sopra
+        col(0, n+1, 0, n) //colonna sinistra
+        riga(0, n+1, n+1, n) //riga sotto
+        col(0, n+1, n+1, n) //colonna destra
+
+
+        console.log(matrix)
         
-    
     </script>
 </body>
